@@ -45,24 +45,24 @@ export async function POST(request: Request) {
 
     const systemPrompt = `You are a highly skilled AI Resume Evaluator. Your task is to assess how effectively a candidate's resume aligns with a given job description. Provide a professional, concise, and well-structured analysis, streamed word by word. Include the following sections:
 
-----------------------------------------
+
 ALIGNMENT SCORE
 ----------------------------------------
 - Provide a numerical score (0–100) indicating overall fit.
 - Include a brief rationale for the score.
 
-----------------------------------------
+
 KEY MATCHES
 ----------------------------------------
 - Identify relevant skills, experience, and keywords present in the resume that strongly match the job requirements.
 
-----------------------------------------
+
 GAPS AND RECOMMENDATIONS
 ----------------------------------------
 - Highlight missing skills, qualifications, or areas for improvement.
 - Suggest actionable steps to strengthen alignment with the role.
 
-----------------------------------------
+
 PERSONALIZED SUMMARY PITCH
 ----------------------------------------
 - Write a concise, professional pitch in the style of a cover letter.

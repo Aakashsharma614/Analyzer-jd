@@ -54,10 +54,9 @@ export default function AnalysisResults({ analysis, isLoading, error }: Analysis
   }
 
   return (
-    <div className="relative bg-slate-800/50 border border-slate-700 rounded-lg p-6 h-full min-h-96 flex flex-col">
+    <div className="relative bg-slate-800/50 border border-slate-700 rounded-lg p-6 flex flex-col h-[700px] max-h-[90vh]">
       {/* Header and Copy Button */}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-semibold text-white">Analysis Results</h2>
         {analysis && <CopyButton textToCopy={analysis} />}
       </div>
 
@@ -77,7 +76,7 @@ export default function AnalysisResults({ analysis, isLoading, error }: Analysis
       {!analysis && !isLoading && !error && (
         <div className="flex-1 flex items-center justify-center">
           <p className="text-slate-400 text-center">
-            Your analysis will appear here. Fill in both fields and click "Analyze Resume" to get started.
+            Your analysis will appear here.
           </p>
         </div>
       )}
@@ -93,7 +92,10 @@ export default function AnalysisResults({ analysis, isLoading, error }: Analysis
       )}
 
       {analysis && (
-        <div ref={scrollRef} className="flex-1 overflow-y-auto pr-2">
+        <div
+          ref={scrollRef}
+          className="flex-1 overflow-y-auto pr-2 scroll-smooth scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-slate-900"
+        >
           <div className="space-y-2 text-sm">
             {renderMarkdown(analysis)}
             {isLoading && (
